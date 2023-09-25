@@ -1,11 +1,23 @@
 const express = require("express");
+const ejs = require("ejs");
+const path = require("path");
 
 const app = express();
 
-app.get("/", (req, res) => {
-  const blog = { id: 1, title: "Blog title", description: "Blog description" };
+app.set("view engine", "ejs");
 
-  res.send(blog);
+app.use(express.static('public'));
+
+app.get("/", (req, res) => {
+  res.render('index');
+});
+
+app.get("/post", (req, res) => {
+  res.render('post');
+});
+
+app.get("/about", (req, res) => {
+  res.render('about');
 });
 
 const port = 3000;
