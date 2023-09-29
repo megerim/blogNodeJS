@@ -31,6 +31,13 @@
                 </div>
             </div>
         </article>
+
+        <div class="justify-content-center mx-auto text-center">
+            <a href="/edit/<%= post.id %>" class="btn btn-primary mb-3">Edit</a>
+            <form action="/posts/delete/<%= post.id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger mb-3">Delete</button>
+            </form>
+        </div>
         <!-- Footer-->
         
         <%- include('partials/_footer') -%>
